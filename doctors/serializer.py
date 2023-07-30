@@ -13,6 +13,7 @@ class DoctorSerializer(serializers.ModelSerializer):
         representation = super().to_representation(instance)
         representation['user'] = UserSerializer(instance.user).data
         representation['doctorInfo'] = {
+            'id' : instance.id,
             'occupation' : instance.occupation,
             'qualification' : instance.qualification,
             'practices' : PracticeSerializer(instance.practices, many=True).data,
