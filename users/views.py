@@ -4,6 +4,9 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from users.serializer import UserDataSerializer
 from django.contrib.auth import authenticate
+from users.utils import decode_jwt
+from doctors.models import Doctor
+from doctors.serializer import DoctorSerializer
 
 # Create your views here.
 
@@ -57,3 +60,16 @@ def login_user(request):
     serializer = UserDataSerializer(user)
         
     return Response({'status':'success', 'data':serializer.data}, status=status.HTTP_200_OK)
+
+
+@api_view(["POST"])
+def get_doctors(request):
+    # ensure user is authenticated
+    decrypted_jwt = decode_jwt(request.META.get("HTTP_AUTHORIZATION").split(" ")[1])
+
+    doctors = Doctor.objects.all()
+
+
+    serializer = DoctorSerializer(doctors, many=True).data
+
+    return Response({'status':'success', 'data':serializer}, status=status.HTTP_200_OK)
