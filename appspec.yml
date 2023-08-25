@@ -5,8 +5,10 @@ files:
     destination: /home/ubuntu/hogwarts
 permissions:
   - object: /home/ubuntu/hogwarts
+    pattern: "*"
     owner: ubuntu
     group: ubuntu
+    type: file
   - object: /home/ubuntu/hogwarts
     owner: ubuntu
     group: ubuntu
