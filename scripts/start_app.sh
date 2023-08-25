@@ -1,6 +1,6 @@
 #!/usr/bin/bash 
 
-sed -i 's/\[]/\["18.206.96.150"]/' /home/ubuntu/hogwarts/blog/settings.py
+sed -i 's/\[]/\["18.206.96.150"]/' /home/ubuntu/hogwarts/hogwarts/settings.py
 
 python manage.py migrate 
 python manage.py makemigrations     

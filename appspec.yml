@@ -7,6 +7,10 @@ permissions:
   - object: /home/ubuntu/hogwarts
     owner: ubuntu
     group: ubuntu
+  - object: /home/ubuntu/hogwarts
+    owner: ubuntu
+    group: ubuntu
+    type: directory
 hooks:
   BeforeInstall:
       - location: scripts/clean_instance.sh
