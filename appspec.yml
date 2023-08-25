@@ -22,6 +22,9 @@ hooks:
         runas: ubuntu
       
   AfterInstall:
+      - location: scripts/set_permissions.sh
+        timout: 300
+        runas: ubuntu
       - location: scripts/setup_env.sh
         timout: 300
         runas: ubuntu
