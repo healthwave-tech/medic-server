@@ -19,6 +19,8 @@ from django.urls import path, include
 import users.urls as UserUrls
 import search.urls as SearchUrls
 import appointments.urls as AppointmentUrls
+from hogwarts import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +28,6 @@ urlpatterns = [
     path('api/v1/', include(SearchUrls)),
     path('api/v1/', include(AppointmentUrls)),
 ]
+
+if settings.DEBUG:
+    urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
