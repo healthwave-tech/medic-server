@@ -1,1 +1,1 @@
-echo DATABASE_URL=$DATABASE_URL >> .env
+echo DATABASE_URL=$DATABASE_URL >> /home/ubuntu/hogwarts/.env
