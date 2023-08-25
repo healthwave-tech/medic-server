@@ -20,10 +20,11 @@ hooks:
       - location: scripts/clean_instance.sh
         timeout: 300
         runas: ubuntu
+      
+  AfterInstall:
       - location: scripts/setup_env.sh
         timout: 300
         runas: ubuntu
-  AfterInstall:
       - location: scripts/instance_os_dependencies.sh
         timeout: 300
         runas: ubuntu
