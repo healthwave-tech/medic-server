@@ -1,14 +1,6 @@
 version: 0.1
 
-environment_variables:
-  plaintext:
-    DJANGO_SETTINGS_MODULE: config.settings.test
-    SECRET_KEY: nosecret
-    DATABASE_URL: .dev-db.sqlite3
-    STREAM_INCOMING_PRIVATE_KEY: changeme
-    STREAM_INCOMING_PUBLIC_KEY: changeme
-    GOOGLE_API_KEY: changeme
-    OPBEAT_ENABLED: False
+
 
 phases:
   pre_build:
