@@ -8,22 +8,24 @@ permissions:
     pattern: "*"
     owner: ubuntu
     group: ubuntu
-    type: file
+    type: 
+      - file
   - object: /home/ubuntu/hogwarts
     owner: ubuntu
     group: ubuntu
-    type: directory
+    type: 
+      - directory
 hooks:
   BeforeInstall:
       - location: scripts/clean_instance.sh
         timeout: 300
         runas: ubuntu
+      - location: scripts/setup_env.sh
+        timout: 300
+        runas: ubuntu
   AfterInstall:
       - location: scripts/instance_os_dependencies.sh
         timeout: 300
-        runas: ubuntu
-      - location: scripts/setup_env.sh
-        timout: 300
         runas: ubuntu
       - location: scripts/python_dependencies.sh
         timeout: 300
