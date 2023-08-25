@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-chown ubuntu:ubuntu /home/ubuntu/hogwarts/ 
+sudo chown ubuntu:ubuntu /home/ubuntu/hogwarts/ 
