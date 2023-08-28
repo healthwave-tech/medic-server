@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users',
     'search',
     'doctors',
+    'organisation',
     'rest_framework',
 
 
